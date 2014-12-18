@@ -2,5 +2,9 @@
   "name": "workflows",
   "version": "0.0.1",
   "description": "A gulp, browserify, etc workflow",
-  "author": "Tyler Youngblood / Ray Villalobos"
+  "author": "Tyler Youngblood / Ray Villalobos",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-util": "^3.0.1"
+  }
 }
