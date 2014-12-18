@@ -1,0 +1,6 @@
+{
+  "name": "workflows",
+  "version": "0.0.1",
+  "description": "A gulp, browserify, etc workflow",
+  "author": "Tyler Youngblood / Ray Villalobos"
+}
