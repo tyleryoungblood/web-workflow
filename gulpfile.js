@@ -2,10 +2,11 @@
 // all methods and properties form gulp (etc)
 // will be assigned to the gulp (etc) variables,
 
-var gulp    = require('gulp'),
-    gutil   = require('gulp-util'),
-    coffee  = require('gulp-coffee'), // process .coffee into .js
-    concat  = require('gulp-concat'); 
+var gulp        = require('gulp'),
+    gutil       = require('gulp-util'),
+    coffee      = require('gulp-coffee'), // process .coffee into .js
+    concat      = require('gulp-concat'),
+    browserify  = require('gulp-browserify'); 
 
 
 var coffeeSources = ['components/coffee/*.coffee'];
@@ -27,5 +28,6 @@ gulp.task('coffee', function(){
 gulp.task('js', function(){
   gulp.src(jsSources)
     .pipe(concat('script.js'))
+    .pipe(browserify())
     .pipe(gulp.dest('builds/development/js'))
 })
