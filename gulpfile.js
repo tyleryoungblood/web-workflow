@@ -27,7 +27,7 @@ gulp.task('coffee', function(){
     .pipe(gulp.dest('components/scripts'))
 });
 
-gulp.task('js', function(){
+gulp.task('js', ['coffee'], function(){ // coffee task is a dependency - it will be rune before the js task
   gulp.src(jsSources)
     .pipe(concat('script.js'))
     .pipe(browserify())
@@ -39,8 +39,11 @@ gulp.task('compass', function(){
     .pipe(compass({
       sass: 'components/sass',
       image: 'builds/development/images',
-      style: 'expanded'
+      style: 'expanded',
+      comments: true
     }))
     .on('error', gutil.log)
     .pipe(gulp.dest('builds/development/css'))
 });
+
+gulp.task('default', ['coffee', 'js', 'compass']);
